@@ -1,7 +1,7 @@
 import json
 import math
 
-import haversine import haversine
+from haversine import haversine
 
 
 class Distances(object):
@@ -15,11 +15,12 @@ class Distances(object):
     def distance(self, location1, location2):
         return haversine(location1, location2)
 
-    def get_coords(airport):
-        lat = int()
-        long = int()
-        for airport in airports:
-            if airport.name == airport:
+    def get_coords(self, airport_code):
+        lat = float()
+        lon = float()
+
+        for airport in self.alaska_airports:
+            if airport['LocationID'] == airport_code:
                 lat = airport['Lat']
                 lon = airport['Lon']
 
@@ -27,7 +28,5 @@ class Distances(object):
         return(lat, lon)
 
 
-
-
-
-coords = Distances(get_coords('AQY'))
+Distances().get_coords('ADK')
+# coords = Distances(get_coords('AQY'))
