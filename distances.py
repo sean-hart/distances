@@ -38,7 +38,12 @@ class Airports(object):
         """Return the closest three airports"""
         airport_proximities = self.get_all_distances(coords)
         closest = sorted(airport_proximities, key=airport_proximities.get)
-        return closest[:3]
+        closest3 =  closest[:3]
+        return ([closest for closest in closest3
+                        if airport_proximities[closest] < 500
+                    ]
+                )
+
 
 if __name__ == "__main__":
     coords = sys.argv

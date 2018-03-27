@@ -50,12 +50,12 @@ class AirportsTests(unittest.TestCase):
 
     def test_get_closest_three_airports(self):
         """The closest 3 airports to (51.88358205555556, 176.64247991666667)
-        are ADK, AKA, and DUT"""
+        are ADK, AKA.  Everything else is outside of 500 KM"""
 
         coords = (51.88358205555556, 176.64247991666667)
         self.assertEqual(
             Airports().get_closest_three_airports(coords),
-            ['ADK', 'AKA', 'PBV']
+            ['ADK', 'AKA']
         )
 
 
